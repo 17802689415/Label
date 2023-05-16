@@ -1,15 +1,29 @@
 <template>
     <div class="back">
             <div class="form-container">
-                <p class="title">Login</p>
+              <div class="img">
+                <el-avatar fit="fill" :size="80">
+                  <img src="../assets/jabilLogo.png">
+                </el-avatar>
+              </div>
+              
+                <p class="title">Label TE SR Login</p>
                 <el-form class="form" v-model="form">
                     <el-form-item class="input-group">
                         <label>Username</label>
-                        <el-input placeholder="" v-model="form.username" class="input"></el-input>
+                        <el-input placeholder="" v-model="form.username" class="input">
+                            <template #prefix>
+                                <img src="../assets/person-outline.svg" height="20">
+                            </template>
+                        </el-input>
                     </el-form-item>
                     <el-form-item class="input-group">
                         <label>Password</label>
-                        <el-input placeholder="" v-model="form.password" class="input"></el-input>
+                        <el-input placeholder="" v-model="form.password" class="input" type="password">
+                            <template #prefix>
+                                <img src="../assets/key-outline.svg" height="20">
+                            </template>
+                        </el-input>
                     </el-form-item>
                     <el-form-item>
                         <el-button @click="login" class="sign">Sign in</el-button>
@@ -49,27 +63,17 @@ export default {
             if(this.form.username=='admin'&&this.form.password=='123456'){
                 this.$router.push('mainHome')
             }else{
-               
-                let that = this
                 localStorage.setItem('time',new Date().getTime())
                 localStorage.setItem('count',++this.index)
                 if(localStorage.getItem('count')==3){
                     this.isShow=true
-                    setTimeout(function(){
-                        that.isShow=false
+                    setTimeout(() => {
+                        this.isShow=false
+                        
                     } ,5000)
                 }
             }
         },
-        // sleep(time){
-        //     let timeStamp = new Date().getTime()
-        //     let end = time+timeStamp
-        //     while(true){
-        //         if(new Date().getTime()>end){
-        //             return
-        //         }
-        //     }
-        // }
     }
 }
 </script>
@@ -83,14 +87,24 @@ export default {
     padding: 0px;
     background-color: #163e6a;
 }
+
+.img{
+  width: 100px;
+  margin: auto;
+}
 .form-container {
   width: 320px;
+  height: 450px;
   border-radius: 0.75rem;
   background-color: rgba(17, 24, 39, 1);
   padding: 2rem;
   color: rgba(243, 244, 246, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
-  transform: translate(50%,50%);
 }
 
 .title {
@@ -121,13 +135,17 @@ export default {
 .sign {
   display: block;
   width: 100%;
-  background-color: rgba(167, 139, 250, 1);
+  background-color: #408E91;
   padding: 0.75rem;
   text-align: center;
   color: rgba(17, 24, 39, 1);
   border: none;
   border-radius: 0.375rem;
   font-weight: 600;
+}
+
+.sign:hover{
+  color: burlywood;
 }
 
 .social-message {
@@ -150,18 +168,7 @@ export default {
   color: rgba(156, 163, 175, 1);
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-}
 
-.social-icons .icon {
-  border-radius: 0.125rem;
-  padding: 0.75rem;
-  border: none;
-  background-color: transparent;
-  margin-left: 8px;
-}
 
 
 

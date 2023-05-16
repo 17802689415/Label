@@ -6,7 +6,7 @@ import dealCase from '../components/DealCase.vue'
 import checkApply from '../components/CheckApply.vue'
 import printPage from '../components/PrintPage.vue'
 import mainHome from '../components/MainHome.vue'
-
+import loginPage from '../components/LoginPage.vue'
 const router = createRouter({
     history:createWebHashHistory(),
     routes:[
@@ -18,7 +18,7 @@ const router = createRouter({
             {name:'printPage',path:'/printPage',component:printPage},
             
         ]},
-        
+        {name:'loginPage',path:'/loginPage',component:loginPage},
         {path:'/',redirect:'/loginPage'},
     ]
 

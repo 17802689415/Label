@@ -1,4 +1,5 @@
 <template>
+<el-scrollbar height="87vh">
   <el-descriptions
   class="des"
     title="Apply Info"
@@ -76,6 +77,7 @@
       </span>
     </template>
   </el-dialog>
+</el-scrollbar>
 </template>
 
 <script>

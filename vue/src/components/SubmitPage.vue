@@ -242,7 +242,7 @@ export default {
 }
 .form{
     width: 900px;
-    height: 40vh;
+    height: 350px;
     border: 1px solid white;
     margin: auto;
     background-color: aliceblue;

@@ -9,15 +9,13 @@
           <menuSide></menuSide>
         </el-aside>
         <el-main class="main">
-      
-          <router-view></router-view>
+            <router-view></router-view>
         </el-main>
       </el-container>
       <el-footer>
         <footerPage></footerPage>
       </el-footer>
     </el-container>
-
 
 </template>
 
@@ -30,7 +28,8 @@ export default {
     components:{
         menuSide,
         headPage,
-        footerPage
+        footerPage,
+     
     }
 
 }

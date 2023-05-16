@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <loginPage></loginPage>
+    <!-- <loginPage></loginPage> -->
     <router-view></router-view>
   </div>
 
@@ -8,12 +8,12 @@
 
 <script>
 // import mainHome from './components/MainHome.vue'
-import loginPage from './components/LoginPage.vue'
+// import loginPage from './components/LoginPage.vue'
 
 export default {
   name: 'App',
   components: {
-    loginPage
+    // loginPage
   }
 }
 </script>

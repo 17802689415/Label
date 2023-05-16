@@ -1,4 +1,5 @@
 <template>
+    <el-scrollbar height="87vh">
     <div class="start">
             <el-form :model="form" label-width="120px">
                 <el-row class="row">
@@ -119,7 +120,7 @@
             
         </el-descriptions-item>
     </el-descriptions>
-
+</el-scrollbar>
 </template>
 
 <script>
