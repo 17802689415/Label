@@ -1,37 +1,53 @@
 <template>
-    <el-menu
-        class="head"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="black"
-        text-color="#fff"
-        active-text-color="#ffd04b"
-        :router="isrouter">
-        <el-menu-item index="1" @click="change" class="item">
+    <div class="head">
+        <div class="btnExp">
             <el-tooltip
                 effect="light"
                 content="Expand Menu"
                 placement="right"
             >
-                <el-button  size="small" class="btn"><el-icon><Expand /></el-icon></el-button>
+                <el-button @click="change" circle><el-icon size="large"><Expand /></el-icon></el-button>
+                <!-- <expandBtn></expandBtn> -->
             </el-tooltip>
-        </el-menu-item>
-        <el-menu-item index="3" class="item"><el-tooltip
-                effect="light"
-                content="logout"
-                placement="right"
-            >
-                <el-button  size="small" class="btn" @click="logout"><el-icon><User /></el-icon>User</el-button>
-            </el-tooltip></el-menu-item>
-    </el-menu>
+        </div>
+        <div style="position: absolute;margin-left: 60%;margin-top: -4vh;">
+            <el-button type="text" class="text"><el-icon color="#F8F6F4" size="20px"><Switch /></el-icon><span style="color: #F8F6F4;">English</span></el-button>
+        </div>
+        
+        
+        <div class="user">
+            <span style="color: white;">zhanglei</span>
+            
+        </div>
+        <div class="logo">
+            <el-avatar fit="fill" :size="40" >
+              <img src="../assets/jabilimages.png">
+              
+            </el-avatar>
+        </div>
+        <div style="position: absolute;margin-top: -4vh;margin-left: 30%;width:26vw">
+            <img src="../assets/homelogo.png" height="60" >
+            <p style="color: white;font-weight: 700;font-size: 40px;margin-top: -6vh;margin-left: 35%;">Label TE SR</p>
+            
+        </div>
+        
+            
+        
+            
+        
+    </div>
 </template>
 
 <script>
+// import expandBtn from '../components/tool/ExpandBtn.vue'
 export default {
     name:'headPage',
+    components:{
+        // expandBtn
+    },
     data(){
         return{
-            isrouter:false
+            
         }
     },
     methods:{
@@ -42,7 +58,7 @@ export default {
             
         },
         logout(){
-            this.$router.push('submitPage')
+            this.$router.push('loginPage')
         }
     }
 }
@@ -55,22 +71,42 @@ export default {
     height: 8vh;
     width: 100%;
     position: absolute;
-    /* background-color: black; */
+    background-color: black;
     margin: auto;
 }
-.item.is-active{
-    background-color: black !important;
-}
-.item:hover{
-    background-color: black !important;
-}
-.item{
-    background-color: black !important;
-    border-bottom-color: black !important;;
-}
-
 .user{
-    right: 0px;
+    height: 2vh;
+    width: 1vw;
+    margin-right: 3vw;
+    float: right;
 }
-
+.btnExp{
+    height: 2vh;
+    width: 5vw;
+    margin-top: 3vh;
+    margin-left: 1vw;
+}
+.logo{
+    height: 2vh;
+    width: 1vw;
+    margin-top: -3vh;
+    margin-right: 2vw;
+    float: right;
+}
+.btn1{
+    height: 2vh;
+    width: 6vw;
+    margin-top: -2vh;
+    margin-left: 7vw;
+}
+.btn2{
+    height: 2vh;
+    width: 6vw;
+    margin-top: -2vh;
+    margin-left: 5vw;
+}
+.text:hover{
+    background-color: burlywood;
+    
+}
 </style>

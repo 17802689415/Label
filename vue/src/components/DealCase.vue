@@ -220,7 +220,7 @@ export default {
     },
     methods:{
         init(){
-
+            
         },
         handleSizeChange(){
 

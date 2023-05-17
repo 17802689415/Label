@@ -32,7 +32,7 @@
                 </el-form>
                 <div class="social-message">
                     <div class="line"></div>
-                    <p class="message">Made Possible.Made Better</p>
+                    <p class="message">Made Possible.Made Better.</p>
                     <div class="line"></div>
                 </div>
             </div>

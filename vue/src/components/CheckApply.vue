@@ -1,5 +1,5 @@
 <template>
-<el-scrollbar height="87vh">
+<el-scrollbar height="80vh">
   <el-descriptions
   class="des"
     title="Apply Info"
