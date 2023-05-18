@@ -56,7 +56,6 @@ export default {
 }
 .main{
   width: auto;
-  /* display: flex; */
   background-color: #163e6a;
 }
 
