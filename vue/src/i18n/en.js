@@ -1,0 +1,37 @@
+export const lang = {
+    language:'English',
+    logout:'Log out',
+    expand:'Expand Menu',
+    submit:'Submit',
+    cancel:'Cancel',
+    clickUpload:'Click to upload',
+    confirm:'Confirm',
+
+    //菜单
+    submitPage:'Submit Cases',
+    dealCase:'Deal with cases',
+    userPage:'User Management',
+
+    //提交
+    selectWorkCell:'Select WorkCell',
+    username:'Username',
+    empId:'EmpId',
+    applyDate:'Apply Date',
+    labelApplyForm:'Label Apply Form',
+    labelType:'Label Type',
+    station:'Station',
+    productModel:'Product Model',
+    productVersion:'Product Version',
+    quantity:'Quantity',
+    productDate:'Product Date',
+    originalLabel:'Whether to provide the original label',
+    labelNumber:'Label Number',
+    printReason:'Print Reason',
+    uploadLabelImage:'Upload Label Image',
+    uploadRiskAssessmentForm:'Upload Risk Assessment Form',
+    recognizable:'Recognizable or not',
+    reprint:'Reprint',
+    planPrint:'Planned Printing',
+    selectPrintType:'Select Print Type',
+    supplementaryInformation:'Supplementary Information',
+}

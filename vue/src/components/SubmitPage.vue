@@ -1,8 +1,8 @@
 <template>
   <div class="submit">
     <div class="select">
-        <label class="sel">Select WorkCell</label><br>
-        <el-select v-model="workCell" placeholder="Select WorkCell" class="sel">
+        <label class="sel">{{ $t('selectWorkCell') }}</label><br>
+        <el-select v-model="workCell" :placeholder="$t('selectWorkCell')" class="sel">
             <el-option
             v-for="item in options"
             :key="item.id"
@@ -20,7 +20,7 @@
             <template #label>
                 <div class="cell-item">
                     <el-icon><User /></el-icon>
-                    Username
+                    {{ $t('username') }}
                 </div>
             </template>
                 {{ username }}
@@ -29,7 +29,7 @@
             <template #label>
                 <div class="cell-item">
                     <el-icon><PriceTag /></el-icon>
-                    EmpId
+                    {{ $t('empId') }}
                 </div>
             </template>
                 {{ empId }}
@@ -38,7 +38,7 @@
             <template #label>
                 <div class="cell-item">
                     <el-icon><Timer /></el-icon>
-                    ApplyDate
+                    {{ $t('applyDate') }}
                 </div>
             </template>
             <el-date-picker
@@ -51,7 +51,7 @@
             <el-descriptions-item>
             <template #label>
                 <div class="cell-item">
-                    <el-icon><PriceTag /></el-icon>
+                    <el-icon><Position /></el-icon>
                     VA/WI
                 </div>
             </template>
@@ -64,90 +64,92 @@
     </div>
     <div class="form" v-show="workCell!=''">
         
-            <el-form :model="form" label-width="120px" ref="form">
+            <el-form :model="form"  ref="form">
                 <el-row class="row" justify="center">
-                    <el-col :span="16" >
+                    
+                    <!-- <el-col :span="8"> -->
                         <el-form-item>
-                            <label class="title" >Label Apply Form</label>
+                            <label class="title" >{{ $t('labelApplyForm') }}</label>
                         </el-form-item>
-                    </el-col>
+                    <!-- </el-col> -->
+                    
                 </el-row>
                 <el-row class="row">
-                    <el-col :span="10">
+                    <el-col :span="10" :offset="1">
                         <el-form-item>
-                            <label>Label Type</label>
+                            <label>{{ $t('labelType') }}</label>
                             <el-input v-model="form.labelType" size="small" class="input"/>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10" :offset="2">
                         <el-form-item>
-                            <label>Stance</label>
+                            <label>{{ $t('station') }}</label>
                             <el-input v-model="form.stance" size="small" class="input"/>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row class="row">
-                    <el-col :span="10">
+                    <el-col :span="10" :offset="1">
                         <el-form-item>
-                            <label>ProductModel</label>
+                            <label>{{ $t('productModel') }}</label>
                             <el-input v-model="form.productModel" size="small" class="input"/>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10" :offset="2">
                         <el-form-item>
-                            <label>ProductVersion</label>
+                            <label>{{ $t('productVersion') }}</label>
                             <el-input v-model="form.productVersion" size="small" class="input"/>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row class="row">
-                    <el-col :span="10">
+                    <el-col :span="10" :offset="1">
                         <el-form-item>
-                            <label>Quantity</label>
+                            <label>{{ $t('quantity') }}</label>
                             <el-input v-model="form.applyQuantity" size="small" class="input"/>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10" :offset="2">
                         <el-form-item>
-                            <label>ProductDate</label>
+                            <label>{{ $t('productDate') }}</label>
                             <el-input v-model="form.productDate" size="small" class="input"/>
                         </el-form-item>
                     </el-col>
                 </el-row>
 
                 <el-row class="btnRow">
-                    <el-col :span="10">
+                    <el-col :span="10" :offset="1">
                         <el-form-item>
-                            <el-button @click="submitForm" class="btn" color="#1B9C85" id="btn1">Submit</el-button>
+                            <el-button @click="submitForm" class="btn" color="#1B9C85" id="btn1">{{ $t('submit') }}</el-button>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10" :offset="2">
                         <el-form-item>
-                            <el-button class="btn" color="#E06469" id="btn2" @click="cancel()">Cancel</el-button>
+                            <el-button class="btn" color="#E06469" id="btn2" @click="cancel()">{{ $t('cancel') }}</el-button>
                         </el-form-item>
                     </el-col>
                 </el-row>
             </el-form>
             <el-dialog
-                title="Select Print Type"
+                :title="$t('selectPrintType')"
                 v-model="dialogVisible"
                 width="30%"
                 :before-close="beforeColse"
                 >
                 <el-dialog
-                    title="Supplementary Information"
+                    :title="$t('supplementaryInformation')"
                     v-model="dialogVisibleAg"
                     width="30%"
                     >
-                    <label>Whether to provide the original label</label><br>
+                    <label>{{ $t('originalLabel') }}</label><br>
                     <el-radio-group v-model="radio">
                         <el-radio label="YES">YES</el-radio>
                         <el-radio label="NO">NO</el-radio>
                     </el-radio-group>
                     <el-form v-model="suppleInfo" v-show="radio!=''">
-                        <el-form-item label="LabelNumber"><el-input v-model="suppleInfo.labelNumber"></el-input></el-form-item>
-                        <el-form-item label="PrintReason"><el-input v-model="suppleInfo.printReason"></el-input></el-form-item>
-                        <el-form-item :label="radio=='YES'?'Upload LabelImage':'Upload RiskAssessmentForm'">
+                        <el-form-item :label="$t('labelNumber')"><el-input v-model="suppleInfo.labelNumber"></el-input></el-form-item>
+                        <el-form-item :label="$t('printReason')"><el-input v-model="suppleInfo.printReason"></el-input></el-form-item>
+                        <el-form-item :label="radio=='YES'?$t('uploadLabelImage'):$t('uploadRiskAssessmentForm')">
                             <el-upload
                                 v-model:file-list="suppleInfo.fileList"
                                 action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
@@ -158,10 +160,10 @@
                                 :on-exceed="handleExceed"
                                 :limit="1"
                             >
-                                <el-button type="primary">Click to upload</el-button>
+                                <el-button type="primary">{{ $t('clickUpload') }}</el-button>
                             </el-upload>
                         </el-form-item>
-                        <el-form-item label="Recognizable or not" v-show="radio=='YES'">
+                        <el-form-item :label="$t('recognizable')" v-show="radio=='YES'">
                             <el-switch
                             v-model="suppleInfo.isRecognize"
                             active-color="#13ce66"
@@ -172,19 +174,19 @@
                     <template #footer>
                         <span>
                             <el-button type="primary" @click="confirmFormAg">
-                                Confirm
+                                {{ $t('confirm') }}
                             </el-button>
                         </span>
                     </template>
                 </el-dialog>
                 <span>
-                    <el-tag class="tag" :color="tagColorAg" @click="printAgain">Print Again</el-tag>
-                    <el-tag class="tag" :color="tagColorPl" @click="printPlan">Plan Print</el-tag>
+                    <el-tag class="tag" :color="tagColorAg" @click="printAgain">{{ $t('reprint') }}</el-tag>
+                    <el-tag class="tag" :color="tagColorPl" @click="printPlan">{{ $t('planPrint') }}</el-tag>
                 </span>
                 <template #footer>
                     <span>
                         <el-button type="primary" @click="confirmForm">
-                            Confirm
+                            {{ $t('confirm') }}
                         </el-button>
                     </span>
                 </template>
@@ -355,7 +357,7 @@ export default {
 }
 .title{
     font-weight: 700;
-    font-size: 45px;
+    font-size: 30px;
     
 }
 

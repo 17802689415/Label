@@ -3,15 +3,17 @@
         <div class="btnExp">
             <el-tooltip
                 effect="light"
-                content="Expand Menu"
+                :content="$t('expand')"
                 placement="right"
             >
-                <el-button @click="change" circle><el-icon size="large"><Expand /></el-icon></el-button>
+                <el-button @click="expandMenu" circle><el-icon size="large"><Expand /></el-icon></el-button>
                 <!-- <expandBtn></expandBtn> -->
             </el-tooltip>
         </div>
         <div style="position: absolute;margin-left: 60%;margin-top: -4vh;">
-            <el-button type="text" class="text"><el-icon color="#F8F6F4" size="20px"><Switch /></el-icon><span style="color: #F8F6F4;">English</span></el-button>
+            <el-button type="text" class="text" @click="changeLanguage"><el-icon color="#F8F6F4" size="20px"><Switch /></el-icon><span style="color: #F8F6F4;" class="language">{{ $t('language') }}</span></el-button>
+            <el-button type="text" class="text" @click="logout"><el-icon color="#F8F6F4" size="20px"><SwitchButton /></el-icon><span style="color: #F8F6F4;" class="language">{{ $t('logout') }}</span></el-button>
+            
         </div>
         
         
@@ -51,14 +53,18 @@ export default {
         }
     },
     methods:{
-        change(){
+        expandMenu(){
             this.$store.state.isCollapse=!this.$store.state.isCollapse
-        },
-        handleSelect(){
-            
         },
         logout(){
             this.$router.push('loginPage')
+        },
+        changeLanguage(){
+            if(this.$i18n.locale == 'en'){
+            this.$i18n.locale = 'zh'
+            }else{
+                this.$i18n.locale = 'en'
+            }
         }
     }
 }
@@ -106,7 +112,13 @@ export default {
     margin-left: 5vw;
 }
 .text:hover{
-    background-color: burlywood;
+    /* background-color: burlywood; */
+    border: 1px white solid;
     
 }
+.text{
+    margin-left: 1vw;
+    padding: 3px;
+}
+
 </style>

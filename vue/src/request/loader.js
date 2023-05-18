@@ -4,7 +4,7 @@ import loaderVue from '@/components/LoaderVue.vue'
 
 const msg = reactive({
     show: false,
-    title: '拼命加载中...'
+    title: ''
 })
 
 const $loading = createApp(loaderVue, {msg}).mount(document.createElement('div'))

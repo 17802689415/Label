@@ -11,15 +11,15 @@
      
             <el-menu-item index="/submitPage">
                 <el-icon><DocumentAdd /></el-icon>
-                <template #title>Submit Applications</template>
+                <template #title>{{ $t('submitPage') }}</template>
             </el-menu-item>
             <el-menu-item index="/dealCase">
                 <el-icon><EditPen /></el-icon>
-                <template #title>Deal with case</template>
+                <template #title>{{ $t('dealCase') }}</template>
             </el-menu-item>
             <el-menu-item index="/userPage">
                 <el-icon><User /></el-icon>
-                <template #title>User Management</template>
+                <template #title>{{ $t('userPage') }}</template>
             </el-menu-item>
         </el-menu>
 

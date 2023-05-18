@@ -92,7 +92,7 @@
         
     >
         <template #extra>
-        <el-button @click="approve">Notice Receiver</el-button>
+        <el-button @click="approve" color="#1B9C85">Notice Receiver</el-button>
         </template>
         <el-descriptions-item label="Whether the first check result is qualified" width="30%" >
             <el-radio-group v-model="radio" v-show="isShow">

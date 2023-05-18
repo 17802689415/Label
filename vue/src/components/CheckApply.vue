@@ -29,7 +29,7 @@
     <el-descriptions-item label="LabelImage">
         <img :src="require('../assets/'+printAgInfo.image)" height="60">
     </el-descriptions-item>
-    <el-descriptions-item label="PrintReason">{{ printAgInfo.riskTable }}</el-descriptions-item>
+    <el-descriptions-item label="RiskAssessmentTable">{{ printAgInfo.riskTable }}</el-descriptions-item>
   </el-descriptions>
 
   <el-descriptions
@@ -40,8 +40,8 @@
     :border="true"
   >
     <template #extra>
-      <el-button @click="reject">Reject</el-button>
-      <el-button @click="approve">Approve</el-button>
+      <el-button @click="reject" id="btn2" color="#E06469">Reject</el-button>
+      <el-button @click="approve" id="btn1" color="#1B9C85">Approve</el-button>
     </template>
     <el-descriptions-item label="Problem" width="50%">
         <el-select v-model="problem" placeholder="请选择问题类型">
@@ -161,5 +161,12 @@ export default {
 }
 .btn:hover{
     color: #87CBB9;
+}
+
+#btn2:hover{
+    background-color: #B04759;
+}
+#btn1:hover{
+    background-color: #227C70;
 }
 </style>
