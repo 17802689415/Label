@@ -56,7 +56,7 @@ export default {
 }
 .main{
   width: auto;
-  background-color: #163e6a;
+  background-color: #F8F6F4;
 }
 
 </style>

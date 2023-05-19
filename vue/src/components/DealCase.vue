@@ -174,7 +174,7 @@ export default {
                 {
                     id:2,
                     step:'打印',
-                    problemDescription:'No Problem',
+                    problemDescription:'',
                     status:'待打印'
                 },
                 {

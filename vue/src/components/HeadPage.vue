@@ -7,29 +7,31 @@
                 :content="$t('expand')"
                 placement="right"
             >
-                <el-button @click="expandMenu" circle style="float: right;margin-top: 20%;margin-right: 20%;"><el-icon size="large"><Expand /></el-icon></el-button>
+                <el-button @click="expandMenu" circle style="margin-bottom:6vh;margin-left:1vw" color="#A4D0A4">
+                    <el-icon size="large"><Expand /></el-icon>
+                </el-button>
 
             </el-tooltip>
         </div>
             
 
             <div style="display: inline-block;height: 8vh;width: 35%;">
-                <img src="../assets/homelogo.png" height="60" style="float: right;">
+                <img src="../assets/homelogo.png" height="60" style="float: right;margin-top:2vh">
                 
             </div>
             
             <div style="display: inline-block;height: 8vh;width: 20%;">
-                <span style="color: white;font-weight: 700;font-size: 3vw;float: right;margin-top: 5%;">Label TE SR</span>
+                <span style="color: black;font-weight: 700;font-size: 3vw;float: right;margin-top: 5%;">Label TE SR</span>
             </div>
             
             <div style="display: inline-block;height: 8vh;width: 20%;">
                 <el-button type="text" class="text" @click="changeLanguage" style="float: right;margin-left: 5%;padding: 2%;">
-                    <el-icon color="#F8F6F4" size="20px"><Switch /></el-icon>
-                    <span style="color: #F8F6F4;" class="language">{{ $t('language') }}</span>
+                    <el-icon color="black" size="20px"><Switch /></el-icon>
+                    <span style="color: black;" class="language">{{ $t('language') }}</span>
                 </el-button>
                 <el-button type="text" class="text" @click="logout" style="float: right;margin-left: 5%;padding: 2%;">
-                    <el-icon color="#F8F6F4" size="20px"><SwitchButton /></el-icon>
-                    <span style="color: #F8F6F4;" class="language">{{ $t('logout') }}</span>
+                    <el-icon color="black" size="20px"><SwitchButton /></el-icon>
+                    <span style="color: black;" class="language">{{ $t('logout') }}</span>
                 </el-button>
             </div>
             
@@ -38,14 +40,14 @@
 
             
 
-            <div style="display: inline-block;height: 8vh;width: 10%;">
-                <el-avatar fit="fill" :size="40" style="float: right;margin-top: 1%;">
+            <div style="display: inline-block;height: 8vh;width: 15%;">
+                <el-avatar fit="fill" :size="40" style="float: right;margin-top: 2vh;">
                     <img src="../assets/jabilimages.png">
                 
                 </el-avatar>
             </div>
-            <div style="display: inline-block;height: 8vh;width: 10%;">
-                <span style="color: white;float: left;margin-top: 15%;margin-left: 5%;">zhanglei</span>
+            <div style="display: inline-block;height: 8vh;width: 5%;">
+                <span style="color: black;float: left;margin-top: 5vh;margin-left: 1vw;">zhanglei</span>
             </div>
              
     </div>
@@ -92,7 +94,7 @@ export default {
     margin: auto;
 }
 .text:hover{
-    border: 1px white solid;
+    border: 1px black solid;
     
 }
 

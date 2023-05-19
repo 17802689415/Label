@@ -129,10 +129,10 @@ export default {
     data(){
         return{
             form:{
-                blankLabelModel:'',
-                ribbonModel:'',
-                labelNumber:'',
-                printerNumber:'',
+                blankLabelModel:'test',
+                ribbonModel:'test',
+                labelNumber:'test',
+                printerNumber:'test',
                 // fileList:['homelogo.png']
             },
             
