@@ -197,7 +197,7 @@
 </template>
 
 <script>
-
+import {message} from '@/request/message.js'
 
 export default {
     name:'submitPage',
@@ -282,12 +282,12 @@ export default {
             if(this.radio=='NO'){
                 
                 // alert(prblemDescription)
-               
+               message.show(prblemDescription,'danger')
                
                
             }
             if(!this.isRecognize){
-                alert(prblemDescription)
+                // alert(prblemDescription)
                 
             }
         },
