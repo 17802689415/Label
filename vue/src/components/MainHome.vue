@@ -1,20 +1,20 @@
 <template>
 
     <el-container class="common-layout">
-      <el-header>
-        <headPage></headPage>
-      </el-header>
-      <el-container class="view">
         <el-aside class="side">
-          <menuSide></menuSide>
+            <menuSide></menuSide>
         </el-aside>
-        <el-main class="main">
-            <router-view></router-view>
-        </el-main>
-      </el-container>
-      <el-footer>
-        <footerPage></footerPage>
-      </el-footer>
+
+        
+        <el-container class="view">
+          <el-header class="head">
+            <headPage></headPage>
+          </el-header>
+          <el-main class="main">
+              <router-view></router-view>
+          </el-main>
+        </el-container>
+      
     </el-container>
 
 </template>
@@ -22,13 +22,11 @@
 <script>
 import menuSide from '../components/MenuSide.vue'
 import headPage from '../components/HeadPage.vue'
-import footerPage from '../components/FooterPage.vue'
 export default {
     name:'mainHome',
     components:{
         menuSide,
         headPage,
-        footerPage,
      
     }
 
@@ -44,18 +42,23 @@ export default {
     position: absolute;
 }
 .view{
-  width: 100%;
-  top:8vh;
-  position: absolute;
+  /* width: auto; */
+  height: 100%;
 }
 
+.head{
+  height: 8vh;
+  background-color: #537188;
+}
 .side{
-  height: 100%;
   width: auto;
-  display: flex;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 .main{
-  width: auto;
+  /* width: auto; */
+  height: 100%;
   background-color: #F8F6F4;
 }
 

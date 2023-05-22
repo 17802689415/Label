@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <label class="sel">Step</label>
+    <div class="box">
+        <label class="sel">{{ $t('step') }}</label>
         <el-select v-model="stepSelect" placeholder="Please Select">
             <el-option
             v-for="item in stepOptions"
@@ -9,7 +9,7 @@
             :value="item">
             </el-option>
         </el-select>
-        <label class="sel">Status</label>
+        <label class="sel">{{ $t('status') }}</label>
         <el-select v-model="statusSelect" placeholder="Please Select">
             <el-option
             v-for="item in statusOptions"
@@ -21,13 +21,13 @@
     </div>
  
     <el-table :data="tableData" class="tab">
-        <el-table-column label="Id" prop="id" />
-        <el-table-column label="Step" prop="step" />
-        <el-table-column label="Status" prop="status" />
-        <el-table-column label="ProblemDescription" prop="problemDescription" />
+        <el-table-column :label="$t('id')" prop="id" />
+        <el-table-column :label="$t('step')" prop="step" />
+        <el-table-column :label="$t('status')" prop="status" />
+        <el-table-column :label="$t('problemDescription')" prop="problemDescription" />
         <el-table-column >
         <template #header> 
-            <el-select v-model="workCell" placeholder="WorkCell to search" size="small">
+            <el-select v-model="workCell" :placeholder="$t('workCellToSearch')" size="small">
                 <el-option
                 v-for="item in options"
                 :key="item.id"
@@ -41,7 +41,7 @@
             size="small"
             type="danger"
             @click="handleDeal(scope.row)"
-            >Deal</el-button
+            >{{ $t('deal') }}</el-button
             >
         </template>
         </el-table-column>
@@ -65,7 +65,7 @@
 
     <el-dialog
         v-model="dialogVisible"
-        title="Tips"
+        :title="$t('steps')"
         :before-close="handleClose"
     >
     <el-steps align-center :active="activeStep" :process-status="processStatus" finish-status="success">
@@ -73,19 +73,19 @@
     </el-steps>
     <el-dialog
         v-model="innerVisible"
-        title="Confirm"
+        :title="$t('confirm')"
       >
-      <el-button @click="receive">Receive</el-button>
+      <el-button @click="receive">{{ $t('receive') }}</el-button>
     </el-dialog>
     <el-dialog
         v-model="innerVisibleAg"
-        title="Reconciliation of accounts"
+        :title="$t('reconciliationOfAccounts')"
       >
-      <label>Scrap Quantity</label>
+      <label>{{ $t('scrapQuantity') }}</label>
       <el-input v-model="scrapQuantity" style="margin-bottom: 10px;"></el-input>
-      <label>Scrap Reason</label>
+      <label>{{ $t('scrapReason') }}</label>
       <el-input v-model="scrapReason" type="textarea" style="margin-bottom: 10px;"></el-input>
-      <label>Scrap Form</label>
+      <label>{{ $t('scrapForm') }}</label>
       <el-upload
           v-model:file-list="fileList"
           class="upload-demo"
@@ -97,14 +97,14 @@
           :limit="3"
           :on-exceed="handleExceed"
       >
-          <el-button type="primary">Click to upload</el-button>
+          <el-button type="primary">{{ $t('clickUpload') }}</el-button>
           <template #tip>
           <div class="el-upload__tip">
               jpg/png files with a size less than 500KB.
           </div>
           </template>
       </el-upload>
-      <el-button @click="submitScrap">Submit</el-button>
+      <el-button @click="submitScrap">{{ $t('submit') }}</el-button>
     </el-dialog>
       
     </el-dialog>
@@ -313,6 +313,11 @@ export default {
 </script>
 
 <style scoped>
+
+.box{
+   
+    width: auto;
+}
 .tab{
     margin-top: 20px;
 }
@@ -322,6 +327,6 @@ export default {
 .sel{
     margin-left: 20px;
     margin-right: 15px;
-    color: white;
+    color: black;
 }
 </style>

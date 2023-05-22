@@ -317,7 +317,7 @@ export default {
     height: 8vh;
     width: 60%;
     background-color: aliceblue;
-    position: absolute;
+    /* position: absolute; */
     
     left: 0;
     right: 0;
@@ -329,12 +329,9 @@ export default {
     width: 50vw;
     height: 45vh;
     border: 1px solid white;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    
     margin: auto;
+    margin-top: 5vh;
     background-color: aliceblue;
 }
 
@@ -370,7 +367,7 @@ export default {
 
 .info{
    float: right;
-   width: 40vw;
+   width: 60%;
    margin-top: -3vh;
    margin-right: 2vw;
 }

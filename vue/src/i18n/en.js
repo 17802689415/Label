@@ -6,6 +6,12 @@ export const lang = {
     cancel:'Cancel',
     clickUpload:'Click to upload',
     confirm:'Confirm',
+    step:'Step',
+    status:'Status',
+    receive:'Receive',
+    reject:'Reject',
+    approve:'Approve',
+    guidance:'Guidance',
 
     //菜单
     submitPage:'Submit Cases',
@@ -34,4 +40,25 @@ export const lang = {
     planPrint:'Planned Printing',
     selectPrintType:'Select Print Type',
     supplementaryInformation:'Supplementary Information',
+
+    //Deal
+    id:'Id',
+    problemDescription:'Problem Description',
+    workCellToSearch:'WorkCell to search',
+    deal:'Deal',
+    steps:'Steps',
+    reconciliationOfAccounts:'Reconciliation Of Accounts',
+    scrapQuantity:'Scrap Quantity',
+    scrapReason:'Scrap Reason',
+    scrapForm:'Scrap Form',
+
+    //check
+    applyInfo:'Apply Info',
+    workCell:'WorkCell',
+    applicant:'Applicant',
+    applyQuantity:'Apply Quantity',
+    labelImage:'Label Image',
+    riskAssessmentTable:'Risk Assessment Table',
+    selectProblem:'Please select question type',
+    
 }

@@ -2,49 +2,49 @@
 <el-scrollbar height="80vh">
   <el-descriptions
   class="des"
-    title="Apply Info"
+    :title="$t('applyInfo')"
     direction="vertical"
     :column="4"
     :border="true"
   >
-    <el-descriptions-item label="WorkCell">{{ applyData.workCell }}</el-descriptions-item>
-    <el-descriptions-item label="Applicant">{{ applyData.applicant }}</el-descriptions-item>
-    <el-descriptions-item label="LabelType">{{ applyData.labelType }}</el-descriptions-item>
-    <el-descriptions-item label="Station">{{ applyData.stance }}</el-descriptions-item>
-    <el-descriptions-item label="ProductModel">{{ applyData.productModel }}</el-descriptions-item>
-    <el-descriptions-item label="ProductVersion">{{ applyData.productVersion }}</el-descriptions-item>
-    <el-descriptions-item label="ApplyQuantity">{{ applyData.applyQuantity }}</el-descriptions-item>
-    <el-descriptions-item label="ProductDate">{{ applyData.productDate }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('workCell')">{{ applyData.workCell }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('applicant')">{{ applyData.applicant }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('labelType')">{{ applyData.labelType }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('station')">{{ applyData.stance }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('productModel')">{{ applyData.productModel }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('productVersion')">{{ applyData.productVersion }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('applyQuantity')">{{ applyData.applyQuantity }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('productDate')">{{ applyData.productDate }}</el-descriptions-item>
   </el-descriptions>
   <el-descriptions
   class="des"
-    title="Supplement Info"
+    :title="$t('supplementaryInformation')"
     direction="vertical"
     :column="4"
     :border="true"
     v-show="applyData.problemDescription=='须质量工程师及其leader进行风险评估'"
   >
-    <el-descriptions-item label="LabelNumber">{{ printAgInfo.labelNumber }}</el-descriptions-item>
-    <el-descriptions-item label="PrintReason">{{ printAgInfo.printReason }}</el-descriptions-item>
-    <el-descriptions-item label="LabelImage">
+    <el-descriptions-item :label="$t('labelNumber')">{{ printAgInfo.labelNumber }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('printReason')">{{ printAgInfo.printReason }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('labelImage')">
         <img :src="require('../assets/'+printAgInfo.image)" height="60">
     </el-descriptions-item>
-    <el-descriptions-item label="RiskAssessmentTable">{{ printAgInfo.riskTable }}</el-descriptions-item>
+    <el-descriptions-item :label="$t('riskAssessmentTable')">{{ printAgInfo.riskTable }}</el-descriptions-item>
   </el-descriptions>
 
   <el-descriptions
   class="des"
-    title="Deal"
+    :title="$t('deal')"
     direction="vertical"
     :column="2"
     :border="true"
   >
     <template #extra>
-      <el-button @click="reject" id="btn2" color="#E06469">Reject</el-button>
-      <el-button @click="approve" id="btn1" color="#1B9C85">Approve</el-button>
+      <el-button @click="reject" id="btn2" color="#E06469">{{ $t('reject') }}</el-button>
+      <el-button @click="approve" id="btn1" color="#1B9C85">{{ $t('approve') }}</el-button>
     </template>
     <el-descriptions-item label="Problem" width="50%">
-        <el-select v-model="problem" placeholder="请选择问题类型">
+        <el-select v-model="problem" :placeholder="$t('selectProblem')">
             <el-option
             v-for="item in options"
             :key="item"
@@ -52,7 +52,7 @@
             :value="item">
             </el-option>
         </el-select><br>
-        <el-input v-model="problemInput" type="textarea" placeholder="请备注问题" v-show="problem=='其他'" style="margin-top: 10px;"></el-input>
+        <el-input v-model="problemInput" type="textarea" :placeholder="$t('')" v-show="problem=='其他'" style="margin-top: 10px;"></el-input>
         <el-button style="margin-top: 10px;" @click="submitProblem">submit</el-button>
     </el-descriptions-item>
     <el-descriptions-item label="Deal">

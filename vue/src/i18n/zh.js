@@ -6,6 +6,10 @@ export const lang = {
     cancel:'取消',
     clickUpload:'点击上传',
     confirm:'确定',
+    step:'阶段',
+    status:'状态',
+    receive:'接收',
+    guidance:'指导',
 
     //菜单
     submitPage:'提交申请',
@@ -34,4 +38,15 @@ export const lang = {
     planPrint:'计划打印',
     selectPrintType:'选择打印类型',
     supplementaryInformation:'补充信息',
+
+    //Deal
+    id:'Id',
+    problemDescription:'问题描述',
+    workCellToSearch:'项目搜索',
+    deal:'处理',
+    steps:'阶段',
+    reconciliationOfAccounts:'对账',
+    scrapQuantity:'报废数量',
+    scrapReason:'报废原因',
+    scrapForm:'报废单'
 }

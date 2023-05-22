@@ -12,11 +12,9 @@ export default {
 
 <style scoped>
 .foot{
-    bottom: 0px;
-    left: 0px;
     height: 5vh;
     width: 100%;
-    position: absolute;
+    display: flex;
     background-color: black;
 }
 </style>

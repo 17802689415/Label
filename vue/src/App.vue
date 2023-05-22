@@ -9,12 +9,16 @@
 <script>
 // import mainHome from './components/MainHome.vue'
 // import loginPage from './components/LoginPage.vue'
-
+import devicePixelRatio from '@/util/devicePixelRatio.js'
 export default {
   name: 'App',
   components: {
     // loginPage
-  }
+  },
+  created() {
+    new devicePixelRatio().init(); // 初始化页面比例
+  },
+
 }
 </script>
 
@@ -23,10 +27,5 @@ export default {
 .box{
   -webkit-user-select: none;
   user-select: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 </style>
