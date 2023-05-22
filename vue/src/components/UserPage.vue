@@ -108,6 +108,6 @@ export default {
 .sel{
     margin-left: 20px;
     margin-right: 15px;
-    color: white;
+    color: black;
 }
 </style>

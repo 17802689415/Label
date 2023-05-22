@@ -4,8 +4,7 @@ import * as ElIconModules from '@element-plus/icons-vue'
 import router from './router/router.js'
 import store from './store/store.js'
 import axios from '@/request/index.js'
-import {createI18n} from 'vue-i18n'
-
+import {createI18n} from 'vue-i18n/index.mjs'
 
 
 
@@ -13,6 +12,7 @@ import {createI18n} from 'vue-i18n'
 const app = createApp(App)
 app.use(router)
 app.use(store)
+
 
 const VueI18n = createI18n
 const i18n = new VueI18n({

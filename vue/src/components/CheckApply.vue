@@ -43,7 +43,7 @@
       <el-button @click="reject" id="btn2" color="#E06469">{{ $t('reject') }}</el-button>
       <el-button @click="approve" id="btn1" color="#1B9C85">{{ $t('approve') }}</el-button>
     </template>
-    <el-descriptions-item label="Problem" width="50%">
+    <el-descriptions-item :label="$t('problem')" width="50%">
         <el-select v-model="problem" :placeholder="$t('selectProblem')">
             <el-option
             v-for="item in options"
@@ -52,10 +52,10 @@
             :value="item">
             </el-option>
         </el-select><br>
-        <el-input v-model="problemInput" type="textarea" :placeholder="$t('')" v-show="problem=='其他'" style="margin-top: 10px;"></el-input>
-        <el-button style="margin-top: 10px;" @click="submitProblem">submit</el-button>
+        <el-input v-model="problemInput" type="textarea" :placeholder="$t('remarkProblem')" v-show="problem=='其他'" style="margin-top: 10px;"></el-input>
+        <el-button style="margin-top: 10px;" @click="submitProblem">{{ $t('submit') }}</el-button>
     </el-descriptions-item>
-    <el-descriptions-item label="Deal">
+    <el-descriptions-item :label="$t('dealProblem')">
         <el-card class="box-card">
             <div v-for="o in problemList" :key="o" class="text item">
                 <span>{{ o }}<el-button size="small" type="text" class="btn" @click="solve(o)"><el-icon><Close /></el-icon>solved</el-button></span>
@@ -65,14 +65,14 @@
   </el-descriptions>
   <el-dialog
     v-model="dialogVisible"
-    title="Remarks Rejection Reason"
+    :title="$t('rejectionReason')"
     :before-close="handleClose"
   >
     <el-input type="textarea" v-model="reason"></el-input>
     <template #footer>
       <span class="dialog-footer">
         <el-button type="primary" @click="dialogVisible = false">
-          Confirm
+          {{ $t('confirm') }}
         </el-button>
       </span>
     </template>
@@ -147,6 +147,7 @@ export default {
         },
         handleClose(){
             this.reason=''
+            this.dialogVisible=false
         }
     }
 }

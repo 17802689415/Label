@@ -2,17 +2,17 @@
     <el-scrollbar height="80vh">
     <div class="start">
         <el-descriptions
-            title="Start Label Info"
+            :title="$t('startLabelInfo')"
             direction="vertical"
             :column="4"
             :border="true"
             v-show="isShow"
         >
-            <el-descriptions-item label="Blank Label Model">{{ form.blankLabelModel }}</el-descriptions-item>
-            <el-descriptions-item label="Ribbon Model">{{ form.ribbonModel }}</el-descriptions-item>
-            <el-descriptions-item label="Label Number">{{ form.labelNumber }}</el-descriptions-item>
-            <el-descriptions-item label="Printer Number">{{ form.printerNumber }}</el-descriptions-item>
-            <el-descriptions-item label="Image">
+            <el-descriptions-item :label="$t('blankLabelModel')">{{ form.blankLabelModel }}</el-descriptions-item>
+            <el-descriptions-item :label="$t('ribbonModel')">{{ form.ribbonModel }}</el-descriptions-item>
+            <el-descriptions-item :label="$t('labelNumber')">{{ form.labelNumber }}</el-descriptions-item>
+            <el-descriptions-item :label="$t('printerNumber')">{{ form.printerNumber }}</el-descriptions-item>
+            <el-descriptions-item :label="$t('image')">
                 <!-- <img :src="require('../assets/'+form.fileList[1])"> -->
             </el-descriptions-item>
         </el-descriptions>
@@ -20,20 +20,20 @@
                 <el-row class="row">
                     <el-col :span="24">
                         <el-form-item>
-                            <label class="title">Start Label</label>
+                            <label class="title">{{ $t('startLabelInfo') }}</label>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row class="row">
                     <el-col :span="10">
                         <el-form-item>
-                            <label>Blank Label Model</label>
+                            <label>{{ $t('blankLabelModel') }}</label>
                             <el-input v-model="form.blankLabelModel" size="small"/>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10" :offset="2">
                         <el-form-item>
-                            <label>Ribbon Model</label>
+                            <label>{{ $t('ribbonModel') }}</label>
                             <el-input v-model="form.ribbonModel" size="small"/>
                         </el-form-item>
                     </el-col>
@@ -41,13 +41,13 @@
                 <el-row class="row">
                     <el-col :span="10">
                         <el-form-item>
-                            <label>Label Number</label>
+                            <label>{{ $t('labelNumber') }}</label>
                             <el-input v-model="form.labelNumber" size="small"/>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10" :offset="2">
                         <el-form-item>
-                            <label>Printer Number</label>
+                            <label>{{ $t('printerNumber') }}</label>
                             <el-input v-model="form.printerNumber" size="small"/>
                         </el-form-item>
                     </el-col>
@@ -55,7 +55,7 @@
                 <el-row class="row">
                     <el-col :span="10">
                         <el-form-item>
-                            <label style="margin-right: 2vw;">Start Label Image</label>
+                            <label style="margin-right: 2vw;">{{ $t('image') }}</label>
                             <el-upload
                                 v-model:file-list="form.fileList"
                                 class="upload-demo"
@@ -64,7 +64,7 @@
                                 :limit="1"
                                 
                             >
-                                <el-button type="primary">Click to upload</el-button>
+                                <el-button type="primary">{{ $t('clickUpload') }}</el-button>
                             </el-upload>
                         </el-form-item>
                     </el-col>
@@ -72,12 +72,12 @@
                 <el-row class="btnRow">
                     <el-col :span="10">
                         <el-form-item>
-                            <el-button @click="submitForm">Submit</el-button>
+                            <el-button @click="submitForm">{{ $t('submit') }}</el-button>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10" :offset="2">
                         <el-form-item>
-                            <el-button>Cancel</el-button>
+                            <el-button>{{ $t('cancel') }}</el-button>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -85,37 +85,37 @@
     </div>
     <el-descriptions
     class="des"
-        title="Deal"
+        :title="$t('deal')"
         direction="vertical"
         :column="3"
         :border="true"
         
     >
         <template #extra>
-        <el-button @click="approve" color="#1B9C85">Notice Receiver</el-button>
+        <el-button @click="approve" color="#1B9C85">{{ $t('noticeReceiver') }}</el-button>
         </template>
-        <el-descriptions-item label="Whether the first check result is qualified" width="30%" >
+        <el-descriptions-item :label="$t('isQualified')" width="30%" >
             <el-radio-group v-model="radio" v-show="isShow">
-                <el-radio :label="1">Up to standard</el-radio>
-                <el-radio :label="0">Below standard</el-radio>
+                <el-radio :label="1">{{ $t('upTostandard') }}</el-radio>
+                <el-radio :label="0">{{ $t('belowStandard') }}</el-radio>
             </el-radio-group><br>
-            <el-button style="margin-top: 10px;" @click="submit">submit</el-button>
+            <el-button style="margin-top: 10px;" @click="submit">{{ $t('submit') }}</el-button>
         </el-descriptions-item>
-        <el-descriptions-item label="End Label" width="30%">
+        <el-descriptions-item :label="$t('endLabel')" width="30%">
             <div v-show="radio=='1'">
                 <el-row>
                 <el-col :span="10">
-                    <label>Label Number</label>
+                    <label>{{ $t('labelNumber') }}</label>
                     <el-input v-model="end"></el-input>
                 </el-col>
                 <el-col :span="10" :offset="4">
-                    <label>Print Quantity</label>
+                    <label>{{ $t('printQuantity') }}</label>
                     <el-input v-model="quantity"></el-input>
                 </el-col>
             </el-row>
             
             
-            <el-button style="margin-top: 10px;" @click="submitEnd">submit</el-button>
+            <el-button style="margin-top: 10px;" @click="submitEnd">{{ $t('submit') }}</el-button>
             </div>
             
         </el-descriptions-item>

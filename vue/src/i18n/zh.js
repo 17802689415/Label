@@ -9,6 +9,8 @@ export const lang = {
     step:'阶段',
     status:'状态',
     receive:'接收',
+    reject:'拒绝',
+    approve:'通过',
     guidance:'指导',
 
     //菜单
@@ -48,5 +50,33 @@ export const lang = {
     reconciliationOfAccounts:'对账',
     scrapQuantity:'报废数量',
     scrapReason:'报废原因',
-    scrapForm:'报废单'
+    scrapForm:'报废单',
+
+
+    //check
+    applyInfo:'申请信息',
+    workCell:'项目',
+    applicant:'申请人',
+    applyQuantity:'申请数量',
+    labelImage:'标签照片',
+    riskAssessmentTable:'风险评估表',
+    selectProblem:'请选择问题类型',
+    remarkProblem:'请备注问题',
+    problem:'问题',
+    dealProblem:'处理',
+    rejectionReason:'请备注拒绝原因',
+
+
+    //print
+    startLabelInfo:'起始标签信息',
+    blankLabelModel:'空白标签型号',
+    ribbonModel:'色带型号',
+    printerNumber:'打印机号',
+    image:'照片',
+    noticeReceiver:'通知领用者',
+    upTostandard:'合格',
+    belowStandard:'不合格',
+    endLabel:'终止标签',
+    printQuantity:'打印数量',
+    isQualified:'首检是否合格'
 }

@@ -3,7 +3,7 @@
             
 
             <div style="display: inline-block;height: 8vh;width: 35%;">
-                <img src="../assets/homelogo.png" height="60" style="float: right;margin-top:2vh">
+                <img src="../assets/logo.png" height="60" style="float: right;margin-top:2vh">
                 
             </div>
             

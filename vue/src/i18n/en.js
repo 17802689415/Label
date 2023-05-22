@@ -60,5 +60,22 @@ export const lang = {
     labelImage:'Label Image',
     riskAssessmentTable:'Risk Assessment Table',
     selectProblem:'Please select question type',
-    
+    remarkProblem:'Please note the question',
+    problem:'Problem',
+    dealProblem:'Deal',
+    rejectionReason:'Remark Rejection Reason',
+
+
+    //print
+    startLabelInfo:'Start Label Info',
+    blankLabelModel:'Blank Label Model',
+    ribbonModel:'Ribbon Model',
+    printerNumber:'Printer Number',
+    image:'Image',
+    noticeReceiver:'Notice Receiver',
+    upTostandard:'Up to standard',
+    belowStandard:'Below standard',
+    endLabel:'End Label',
+    printQuantity:'Print Quantity',
+    isQualified:'Whether the first check result is qualified'
 }

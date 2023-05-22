@@ -67,11 +67,11 @@
             <el-form :model="form"  ref="form">
                 <el-row class="row" justify="center">
                     
-                    <!-- <el-col :span="8"> -->
+                    
                         <el-form-item>
                             <label class="title" >{{ $t('labelApplyForm') }}</label>
                         </el-form-item>
-                    <!-- </el-col> -->
+                    
                     
                 </el-row>
                 <el-row class="row">
@@ -154,10 +154,6 @@
                                 v-model:file-list="suppleInfo.fileList"
                                 action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
                                 multiple
-                                :on-preview="handlePreview"
-                                :on-remove="handleRemove"
-                                :before-remove="beforeRemove"
-                                :on-exceed="handleExceed"
                                 :limit="1"
                             >
                                 <el-button type="primary">{{ $t('clickUpload') }}</el-button>
@@ -201,6 +197,8 @@
 </template>
 
 <script>
+
+
 export default {
     name:'submitPage',
     data(){
@@ -240,13 +238,11 @@ export default {
         }
     },
     created(){
-        this.init()
+        
     },
    
     methods:{
-        init(){
-            console.log(this.labelItemValue)
-        },
+        
         getTime(){
                 let time = setInterval(() =>{
                 this.applyDate=new Date()
@@ -285,10 +281,14 @@ export default {
             let prblemDescription = '须质量工程师及其leader进行风险评估'
             if(this.radio=='NO'){
                 
-                alert(prblemDescription)
+                // alert(prblemDescription)
+               
+               
+               
             }
             if(!this.isRecognize){
                 alert(prblemDescription)
+                
             }
         },
         cancel(){
@@ -298,7 +298,8 @@ export default {
             this.form.productVersion=''
             this.form.applyQuantity=0
             this.form.productDate=''
-        }
+        },
+        
     }
 }
 </script>

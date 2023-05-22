@@ -25,29 +25,29 @@
                 </div> 
 
               
-                    <div style="margin: auto;width: auto;height: 12vh;margin-top: 1vh;background-color: aliceblue;transition: all 2s;" v-show="!this.$store.state.isCollapse">
+                    <div style="margin: auto;width: auto;height: 12vh;margin-top: 1vh;background-color: aliceblue;" v-show="!this.$store.state.isCollapse" ref="exp">
                         <div style="text-align: center;">
                             <p style="font-size: 2vh;font-weight: 600;">zhanglei</p>
                         </div>
                         <div>
                             <el-row>
                                 <el-col :span="6" :offset="2">
-                                    <el-button type="text" class="text" @click="changeLanguage" style="margin: auto;width: 1vw;height: 3vh;">
+                                    <el-link :underline="false" @click="changeLanguage" style="margin: auto;width: 1vw;height: 3vh;">
                                         <el-icon color="#025464" size="20px"><Switch /></el-icon>
-                                    </el-button>
-                                    <p>{{ $t('language') }}</p>
+                                    </el-link>
+                                    <p class="text">{{ $t('language') }}</p>
                                 </el-col>
                                 <el-col :span="6" :offset="2">
-                                    <el-button type="text" class="text" @click="logout" style="margin: auto;width: 1vw;height: 3vh;">
+                                    <el-link :underline="false" @click="logout" style="margin: auto;width: 1vw;height: 3vh;">
                                         <el-icon color="#025464" size="20px"><SwitchButton /></el-icon>
-                                    </el-button>
-                                    <p>{{ $t('logout') }}</p>
+                                    </el-link>
+                                    <p class="text">{{ $t('logout') }}</p>
                                 </el-col>
                                 <el-col :span="6" :offset="2">
-                                    <el-button type="text" class="text" @click="logout" style="margin: auto;width: 1vw;height: 3vh;">
+                                    <el-link :underline="false" @click="logout" style="margin: auto;width: 1vw;height: 3vh;">
                                         <el-icon color="#025464" size="20px"><Link /></el-icon>
-                                    </el-button>
-                                    <p>{{ $t('guidance') }}</p>
+                                    </el-link>
+                                    <p class="text">{{ $t('guidance') }}</p>
                                 </el-col>
                             </el-row>
                         </div>
@@ -82,12 +82,14 @@ export default {
     data(){
         return{
             isRouter:true,
-            
         }
     },
     methods:{
         expandMenu(){
             this.$store.state.isCollapse=!this.$store.state.isCollapse
+            if(this.$store.state.isCollapse){
+                this.$refs.exp.style.opacity='0'
+            }
             
         },
         changeLanguage(){
@@ -112,5 +114,8 @@ export default {
 .menu:not(.el-menu--collapse){
     width: 250px;
 }
-
+.text{
+    font-size: 1.5vh;
+    font-weight: 600;
+}
 </style>
