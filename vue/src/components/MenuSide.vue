@@ -7,7 +7,7 @@
             text-color="white"
             active-text-color="#559867"
             :router="isRouter"
-            default-active="1"
+            default-active="/dealCase"
             >
 
             

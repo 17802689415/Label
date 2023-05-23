@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <label class="sel">{{ $t('step') }}</label>
-        <el-select v-model="stepSelect" placeholder="Please Select">
+        <el-select v-model="stepSelect" placeholder="Please Select" @change="selectStep">
             <el-option
             v-for="item in stepOptions"
             :key="item"
@@ -10,7 +10,7 @@
             </el-option>
         </el-select>
         <label class="sel">{{ $t('status') }}</label>
-        <el-select v-model="statusSelect" placeholder="Please Select">
+        <el-select v-model="statusSelect" placeholder="Please Select" @change="selectStatus">
             <el-option
             v-for="item in statusOptions"
             :key="item"
@@ -18,6 +18,7 @@
             :value="item">
             </el-option>
         </el-select>
+        
     </div>
  
     <el-table :data="tableData" class="tab">
@@ -27,7 +28,7 @@
         <el-table-column :label="$t('problemDescription')" prop="problemDescription" />
         <el-table-column >
         <template #header> 
-            <el-select v-model="workCell" :placeholder="$t('workCellToSearch')" size="small">
+            <el-select v-model="workCell" :placeholder="$t('workCellToSearch')" size="small" @change="selectWorkCell">
                 <el-option
                 v-for="item in options"
                 :key="item.id"
@@ -80,6 +81,7 @@
     <el-dialog
         v-model="innerVisibleAg"
         :title="$t('reconciliationOfAccounts')"
+        :before-close="closeScrap"
       >
       <label>{{ $t('scrapQuantity') }}</label>
       <el-input v-model="scrapQuantity" style="margin-bottom: 10px;"></el-input>
@@ -208,6 +210,7 @@ export default {
             innerVisibleAg:false,
             stepValue:'',
             scrapQuantity:0,
+            scrapReason:'',
             fileList:[],
             stepSelect:'',
             stepOptions:['step'],
@@ -222,8 +225,17 @@ export default {
         init(){
             
         },
+        selectStep(val){
+            console.log(val)
+        },
+        selectStatus(val){
+            console.log(val)
+        },
+        selectWorkCell(val){
+            console.log(val)
+        },
         handleSizeChange(){
-
+            
         },
         handleCurrentChange(){
 
@@ -307,6 +319,12 @@ export default {
         },
         submitScrap(){
             console.log(this.fileList)
+        },
+        closeScrap(){
+            this.scrapQuantity=0
+            this.scrapReason=''
+            this.fileList=[]
+            this.innerVisibleAg=false
         }
     }
 }

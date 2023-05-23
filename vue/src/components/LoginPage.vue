@@ -61,7 +61,7 @@ export default {
         login(){
             
             if(this.form.username=='admin'&&this.form.password=='123456'){
-                this.$router.push('mainHome')
+                this.$router.push('dealCase')
             }else{
                 localStorage.setItem('time',new Date().getTime())
                 localStorage.setItem('count',++this.index)

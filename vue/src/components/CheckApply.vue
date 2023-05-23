@@ -44,8 +44,8 @@
       <el-button @click="approve" id="btn1" color="#1B9C85">{{ $t('approve') }}</el-button>
     </template>
     <el-descriptions-item :label="$t('problem')" width="50%">
-        <el-select v-model="problem" :placeholder="$t('selectProblem')">
-            <el-option
+        <el-select v-model="problem" :placeholder="$t('selectProblem')" class="select">
+            <el-option 
             v-for="item in options"
             :key="item"
             :label="item"
@@ -171,5 +171,8 @@ export default {
 }
 #btn1:hover{
     background-color: #227C70;
+}
+.select{
+    transform: scale(0.8);
 }
 </style>

@@ -20,10 +20,14 @@ const message = {
         this.getShow()
     },
     getShow(){
-            let isShow = setInterval(() =>{
+            let isShow = setTimeout(() =>{
             msg.show = false
         },5000)
         return isShow
     },
+    hide(){
+        msg.show = false
+        console.log('ooooo')
+    }
 }
 export  { message }
