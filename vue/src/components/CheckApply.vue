@@ -1,5 +1,5 @@
 <template>
-<el-scrollbar height="80vh">
+<el-scrollbar >
   <el-descriptions
   class="des"
     :title="$t('applyInfo')"
@@ -81,6 +81,7 @@
 </template>
 
 <script>
+import { message } from '@/request/message.js'
 export default {
     name:'checkApply',
     data(){
@@ -139,7 +140,8 @@ export default {
         },
         approve(){
             if(this.problemList.length>0){
-                alert('还有问题尚未处理')
+                // alert('还有问题尚未处理')
+                message.show('还有问题尚未处理','danger')
             }
         },
         reject(){

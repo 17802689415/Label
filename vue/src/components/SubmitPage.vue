@@ -1,4 +1,5 @@
 <template>
+    
   <div class="submit">
     <div class="select">
         <label class="sel">{{ $t('selectWorkCell') }}</label><br>
@@ -197,10 +198,11 @@
 </template>
 
 <script>
-import {message} from '@/request/message.js'
+import { message } from '@/request/message.js'
 
 export default {
     name:'submitPage',
+    
     data(){
         return{
             workCell:'',
@@ -282,8 +284,10 @@ export default {
             if(this.radio=='NO'){
                 
                 // alert(prblemDescription)
-               message.show(prblemDescription,'danger')
-               
+                // 
+                message.show(prblemDescription,'success')
+            // this.$toast.show(prblemDescription, 1500)
+               console.log('111')
                
             }
             if(!this.isRecognize){
@@ -310,12 +314,12 @@ export default {
     /* display: flex; */
 }
 .sel{
-    margin-top: 1vh;
-    margin-left: 2vw;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 .select{
-    height: 8vh;
+    height: 80px;
     width: 60%;
     background-color: aliceblue;
     /* position: absolute; */
@@ -323,25 +327,25 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
-    padding: 1vh;
+    padding: 10px;
     border-radius: 50px;
 }
 .form{
-    width: 50vw;
-    height: 45vh;
+    width: 800px;
+    height: 450px;
     border: 1px solid white;
     
     margin: auto;
-    margin-top: 5vh;
+    margin-top: 50px;
     background-color: aliceblue;
 }
 
 .row{
-    top:1vh;
+    top:10px;
 
 }
 .btnRow{
-    top: 4vh;
+    top: 40px;
     
 }
 .btn{
@@ -360,7 +364,7 @@ export default {
 }
 
 .tag{
-    margin-left: 1vw;
+    margin-left: 10px;
 }
 .tag:hover{
     background-color: #FCFFB2;
@@ -369,8 +373,8 @@ export default {
 .info{
    float: right;
    width: 60%;
-   margin-top: -3vh;
-   margin-right: 2vw;
+   margin-top: -20px;
+   margin-right: 20px;
 }
 
 

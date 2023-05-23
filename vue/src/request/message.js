@@ -1,6 +1,6 @@
 import { createApp, reactive } from 'vue'
 
-import messageVue from '@/components/MessageVue.vue'
+import messageVue from '../components/MessageVue.vue'
 
 const msg = reactive({
     show: false,
@@ -15,6 +15,7 @@ const message = {
         msg.show = true
         msg.title = title
         msg.type = type
+        console.log('222')
         document.body.appendChild($message.$el)
         this.getShow()
     },

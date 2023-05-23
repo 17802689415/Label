@@ -10,6 +10,7 @@
           <el-header class="head">
             <headPage></headPage>
           </el-header>
+          
           <el-main class="main">
               <router-view></router-view>
           </el-main>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+
 import menuSide from '../components/MenuSide.vue'
 import headPage from '../components/HeadPage.vue'
 export default {
@@ -27,7 +29,7 @@ export default {
     components:{
         menuSide,
         headPage,
-     
+        
     }
 
 }
@@ -47,7 +49,7 @@ export default {
 }
 
 .head{
-  height: 8vh;
+  height: 60px;
   background-color: #537188;
 }
 .side{

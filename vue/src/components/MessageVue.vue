@@ -1,38 +1,37 @@
 <template>
-    <!-- <div class="card" v-show="msg.show" ref="card"> -->
-        
-        <!-- <el-button><el-icon><Close /></el-icon></el-button> -->
-        <el-tag class="card" :type="msg.type" closable v-show="msg.show">{{ msg.title }}</el-tag>
-        <!-- <p></p> -->
-    <!-- </div> -->
+ 
+        <el-tag v-show="msg.show" class="tag" :closable="true" :type="msg.type" >
+            <span style="font-size: 30px;font-weight: 600;">{{ msg.title }}</span>
+        </el-tag>
+ 
     
 </template>
 <script>
-
 export default {
     name:'messageVue',
     props:{
         msg:Object
     },
-    
+    data(){
+        return{
+            
+        }
+        
+    },
+    methods:{
+     
+    }
 }
 </script>
 <style scoped>
-.card{
-    width: 24vw;
-    height: 8vh;
-    background-color:aliceblue;
-    border-radius: 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.tag{
+    /* position: relative; */
+    width: 900px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 50%;
     margin: auto;
+
 }
-
-
-
-
-
-
 </style>

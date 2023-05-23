@@ -26,7 +26,7 @@
 
               
                     <div style="margin: auto;height: 120px;margin-top: 1vh;background-color: aliceblue;" v-show="!this.$store.state.isCollapse" ref="exp">
-                        <div style="text-align: center;height: 20px;min-height: 16px;max-height: 20px;">
+                        <div style="text-align: center;height: 20px;">
                             <p style="font-weight: 600;">zhanglei</p>
                         </div>
                         <div style="height: 70px;margin-top: 30px;">
@@ -115,7 +115,7 @@ export default {
     width: 250px;
 }
 .text{
-    font-size: 1px;
+    font-size: 10px;
     font-weight: 600;
 }
 </style>

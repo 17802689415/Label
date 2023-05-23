@@ -1,5 +1,5 @@
 <template>
-    <el-scrollbar height="80vh">
+    <el-scrollbar >
     <div class="start">
         <el-descriptions
             :title="$t('startLabelInfo')"

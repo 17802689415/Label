@@ -2,9 +2,9 @@
     <div class="head">
             
 
-            <div style="display: inline-block;">
+            <div style="display: inline-block;height: 60px;">
                 <img src="../assets/logo.png" height="60" style="float: left;">
-                <span style="color: black;font-weight: 700;font-size: 3vw;float: right;">Label TE SR</span>
+                <span style="color: black;font-weight: 700;font-size: 50px;float: right;">Label TE SR</span>
             </div>
             
 
@@ -32,8 +32,8 @@ export default {
 <style scoped>
 .head{
     width: 100%;
-
-    position: fixed;
+    height: 60px;
+    
     
 
 }

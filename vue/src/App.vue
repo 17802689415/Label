@@ -1,6 +1,7 @@
 <template>
   <div class="box">
     <!-- <loginPage></loginPage> -->
+    
     <router-view></router-view>
   </div>
 
@@ -8,11 +9,12 @@
 
 <script>
 // import mainHome from './components/MainHome.vue'
-// import loginPage from './components/LoginPage.vue'
+
 import devicePixelRatio from '@/util/devicePixelRatio.js'
 export default {
   name: 'App',
   components: {
+    
     // loginPage
   },
   created() {
@@ -29,8 +31,8 @@ export default {
   user-select: none;
   width: 100%;
   height: 100%;
-  position: fixed;
-  display: flex;
+  /* position: fixed;
+  display: flex; */
   top: 0;
   left: 0;
 }
