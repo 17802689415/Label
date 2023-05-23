@@ -11,13 +11,13 @@
             >
 
             
-                <div style="margin: auto;width: 2vw;height: 5vh;margin-top: 1vh;">
+                <div style="width: 40px;height: 50px;margin: auto;margin-top: 10px;">
                     <el-tooltip
                         effect="light"
                         :content="$t('expand')"
                         placement="right"
                     >
-                        <el-button @click="expandMenu" circle color="#A4D0A4">
+                        <el-button @click="expandMenu" circle color="#A4D0A4" style="width: 40px;">
                             <el-icon size="large"><Expand /></el-icon>
                         </el-button>
 
@@ -25,26 +25,26 @@
                 </div> 
 
               
-                    <div style="margin: auto;width: auto;height: 12vh;margin-top: 1vh;background-color: aliceblue;" v-show="!this.$store.state.isCollapse" ref="exp">
-                        <div style="text-align: center;">
-                            <p style="font-size: 2vh;font-weight: 600;">zhanglei</p>
+                    <div style="margin: auto;height: 120px;margin-top: 1vh;background-color: aliceblue;" v-show="!this.$store.state.isCollapse" ref="exp">
+                        <div style="text-align: center;height: 20px;min-height: 16px;max-height: 20px;">
+                            <p style="font-weight: 600;">zhanglei</p>
                         </div>
-                        <div>
+                        <div style="height: 70px;margin-top: 30px;">
                             <el-row>
                                 <el-col :span="6" :offset="2">
-                                    <el-link :underline="false" @click="changeLanguage" style="margin: auto;width: 1vw;height: 3vh;">
+                                    <el-link :underline="false" @click="changeLanguage" style="margin: auto;">
                                         <el-icon color="#025464" size="20px"><Switch /></el-icon>
                                     </el-link>
                                     <p class="text">{{ $t('language') }}</p>
                                 </el-col>
                                 <el-col :span="6" :offset="2">
-                                    <el-link :underline="false" @click="logout" style="margin: auto;width: 1vw;height: 3vh;">
+                                    <el-link :underline="false" @click="logout" style="margin: auto;">
                                         <el-icon color="#025464" size="20px"><SwitchButton /></el-icon>
                                     </el-link>
                                     <p class="text">{{ $t('logout') }}</p>
                                 </el-col>
                                 <el-col :span="6" :offset="2">
-                                    <el-link :underline="false" @click="logout" style="margin: auto;width: 1vw;height: 3vh;">
+                                    <el-link :underline="false" @click="logout" style="margin: auto;">
                                         <el-icon color="#025464" size="20px"><Link /></el-icon>
                                     </el-link>
                                     <p class="text">{{ $t('guidance') }}</p>
@@ -115,7 +115,7 @@ export default {
     width: 250px;
 }
 .text{
-    font-size: 1.5vh;
+    font-size: 1px;
     font-weight: 600;
 }
 </style>

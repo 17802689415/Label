@@ -27,5 +27,11 @@ export default {
 .box{
   -webkit-user-select: none;
   user-select: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
 }
 </style>
