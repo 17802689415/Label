@@ -84,7 +84,19 @@ export default {
             isRouter:true,
         }
     },
+    created(){
+        this.init()
+    },
     methods:{
+        async init(){
+        //     await this.$axios.post('/admin/protected_route',{
+        //     headers:{
+        //       'Content-Type':'application/json'
+        //     }
+        //   }).then((res) => {
+        //     console.log(res)
+        //   })
+        },
         expandMenu(){
             this.$store.state.isCollapse=!this.$store.state.isCollapse
             if(this.$store.state.isCollapse){
@@ -100,6 +112,8 @@ export default {
             }
         },
         logout(){
+            localStorage.removeItem('user')
+            localStorage.removeItem('token')
             this.$router.push('loginPage')
         },
     }

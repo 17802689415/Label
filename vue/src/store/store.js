@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import {getToken,getUid} from '@/request/token.js'
+import {getToken} from '@/request/token.js'
 
 
 
@@ -9,7 +9,6 @@ const store = createStore({
     return {
         isCollapse: true,
         token: getToken(),
-        uId: getUid()
     }
   },
 })

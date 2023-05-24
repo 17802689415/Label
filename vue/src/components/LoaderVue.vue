@@ -6,6 +6,7 @@
   <div class="loader__bar"></div>
   <div class="loader__bar"></div>
   <div class="loader__ball"></div>
+  <span style="font-weight: 600;">{{ msg.title }}</span>
 </div>
 </template>
 

@@ -26,7 +26,7 @@
                         </el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button @click="login" class="sign">Sign in</el-button>
+                        <el-button @click="login" class="sign" :disabled="dis">Sign in</el-button>
                         <p v-show="isShow">sign in after one minute</p>
                     </el-form-item>
                 </el-form>
@@ -53,26 +53,40 @@ export default {
                 password:''
             },
             index:0,
-            isShow:false
+            isShow:false,
+            dis:false
             
         }
     },
     methods:{
-        login(){
+        async login(){
             
-            if(this.form.username=='admin'&&this.form.password=='123456'){
-                this.$router.push('dealCase')
-            }else{
-                localStorage.setItem('time',new Date().getTime())
-                localStorage.setItem('count',++this.index)
-                if(localStorage.getItem('count')==3){
-                    this.isShow=true
-                    setTimeout(() => {
-                        this.isShow=false
-                        
-                    } ,5000)
-                }
+          await this.$axios.post('/admin/login',{
+            username:this.form.username,
+            password:this.form.password
+          },{
+            headers:{
+              'Content-Type':'application/json'
             }
+          }).then((res) => {
+            console.log(res)
+            if(res.status==200){
+              localStorage.setItem('user',this.form.username)
+              localStorage.setItem('token',res.data.access_token)
+              this.$router.push('dealCase')
+            }else{
+                  localStorage.setItem('time',new Date().getTime())
+                  localStorage.setItem('count',++this.index)
+                  if(localStorage.getItem('count')==3){
+                      this.isShow=true
+                      this.dis=true
+                      setTimeout(() => {
+                          this.isShow=false
+                          this.dis=false
+                      } ,5000)
+                  }
+            }
+          })
         },
     }
 }

@@ -26,7 +26,7 @@ const i18n = new VueI18n({
 app.use(i18n)
 
 
-axios.defaults.baseURL = 'https://localhost:8099'
+axios.defaults.baseURL = ' http://localhost:8080'
 app.config.globalProperties.$axios=axios
 //引入icon
 Object.keys(ElIconModules).forEach(function (key) {
