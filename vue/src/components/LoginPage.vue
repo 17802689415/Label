@@ -44,6 +44,7 @@
 </template>
 
 <script>
+// import {getToken} from '@/request/token.js'
 export default {
     name:'loginPage',
     data(){
@@ -58,15 +59,28 @@ export default {
             
         }
     },
+    created(){
+      this.init()
+    },
     methods:{
+        async init(){
+          
+          // await this.$axios.get('/admin/protected',{
+          //   headers:{
+          //     'Authorization':'Bearer'+localStorage.getItem('token')
+          //   }
+          // }).then((res) => {
+          //   console.log(res)
+          // })
+        },
         async login(){
             
-          await this.$axios.post('/admin/login',{
+          await this.$axios.post('/admin/token',{
             username:this.form.username,
             password:this.form.password
           },{
             headers:{
-              'Content-Type':'application/json'
+              'Content-Type':'application/x-www-form-urlencoded'
             }
           }).then((res) => {
             console.log(res)
@@ -83,6 +97,7 @@ export default {
                       setTimeout(() => {
                           this.isShow=false
                           this.dis=false
+                          this.index=0
                       } ,5000)
                   }
             }

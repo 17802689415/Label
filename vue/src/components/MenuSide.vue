@@ -89,13 +89,7 @@ export default {
     },
     methods:{
         async init(){
-        //     await this.$axios.post('/admin/protected_route',{
-        //     headers:{
-        //       'Content-Type':'application/json'
-        //     }
-        //   }).then((res) => {
-        //     console.log(res)
-        //   })
+            
         },
         expandMenu(){
             this.$store.state.isCollapse=!this.$store.state.isCollapse
