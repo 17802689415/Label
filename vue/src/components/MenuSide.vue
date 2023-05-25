@@ -85,12 +85,9 @@ export default {
         }
     },
     created(){
-        this.init()
     },
     methods:{
-        async init(){
-            
-        },
+        
         expandMenu(){
             this.$store.state.isCollapse=!this.$store.state.isCollapse
             if(this.$store.state.isCollapse){

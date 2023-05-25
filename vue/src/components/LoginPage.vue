@@ -9,17 +9,17 @@
               
                 <p class="title">Label TE SR Login</p>
                 <el-form class="form" v-model="form">
-                    <el-form-item class="input-group">
-                        <label>Username</label>
-                        <el-input placeholder="" v-model="form.username" class="input">
+                    <el-form-item class="input-group" >
+                        <label ref="user">Username</label>
+                        <el-input placeholder="" v-model="form.username" class="input" @blur="user()" >
                             <template #prefix>
                                 <img src="../assets/person-outline.svg" height="20">
                             </template>
                         </el-input>
                     </el-form-item>
                     <el-form-item class="input-group">
-                        <label>Password</label>
-                        <el-input placeholder="" v-model="form.password" class="input" type="password">
+                        <label ref="pass">Password</label>
+                        <el-input placeholder="" v-model="form.password" class="input" type="password" @blur="pass()" >
                             <template #prefix>
                                 <img src="../assets/key-outline.svg" height="20">
                             </template>
@@ -28,6 +28,8 @@
                     <el-form-item>
                         <el-button @click="login" class="sign" :disabled="dis">Sign in</el-button>
                         <p v-show="isShow">sign in after one minute</p>
+                        <!-- <p v-show="userRule">{{userMsg}}</p>
+                        <p v-show="passRule">{{passMsg}}</p> -->
                     </el-form-item>
                 </el-form>
                 <div class="social-message">
@@ -44,7 +46,8 @@
 </template>
 
 <script>
-// import {getToken} from '@/request/token.js'
+import {message} from '@/request/message.js'
+import {getToken} from '@/request/token.js'
 export default {
     name:'loginPage',
     data(){
@@ -55,23 +58,26 @@ export default {
             },
             index:0,
             isShow:false,
-            dis:false
-            
+            dis:false,
         }
     },
     created(){
-      this.init()
+      if(getToken()){
+        this.init()
+      }
+      
     },
     methods:{
         async init(){
           
-          // await this.$axios.get('/admin/protected',{
-          //   headers:{
-          //     'Authorization':'Bearer'+localStorage.getItem('token')
-          //   }
-          // }).then((res) => {
-          //   console.log(res)
-          // })
+          await this.$axios.get('/admin/protected',{
+            headers:{
+              'accept':'application/json'
+            }
+          }).then((res) => {
+            console.log(res)
+            this.$router.push('dealCase')
+          })
         },
         async login(){
             
@@ -103,6 +109,22 @@ export default {
             }
           })
         },
+        user(){
+          if(this.form.username.length!=7){
+            message.show('Please enter a seven digit account','danger')
+            this.$refs.user.style.color='#E57C23'
+          }else{
+            this.$refs.user.style.color='#F8F1F1'
+          }
+        },
+        pass(){
+          if(this.form.password.length==0){
+            message.show('Please enter password','danger')
+            this.$refs.pass.style.color='#E57C23'
+          }else{
+            this.$refs.pass.style.color='#F8F1F1'
+          }
+        }
     }
 }
 </script>
@@ -155,7 +177,7 @@ export default {
 
 .input-group label {
   display: block;
-  color: rgba(156, 163, 175, 1);
+  color: #F8F1F1;
   margin-bottom: 4px;
 }
 

@@ -7,7 +7,7 @@ import {load} from '@/request/loader.js'
 axios.interceptors.request.use(function(config){
     console.log('请求即将开始');
     if(getToken()){
-        config.headers.Authorization = localStorage.getItem("token");
+        config.headers.Authorization = ' Bearer '+localStorage.getItem("token");
         console.log(config.headers.Authorization)
     }else{
         router.push("/") 
